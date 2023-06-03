@@ -17,7 +17,6 @@
         const add = fast.next
         fast.next = add.next
         fast = fast.next
-        console.log(add, fast)
         add.next = slow.next
         slow.next = add
         slow = slow.next
