@@ -24,7 +24,6 @@ const result = []
 for(let i=start; i<=end;i++) {
     const leftList = generateTreeStrct(start, i-1)
     const rightList = generateTreeStrct(i+1, end)
-    console.log(leftList,'leftList', rightList,'rightList')
      for (let j = 0; j < leftList.length; j++) {
       for (let k = 0; k < rightList.length; k++) {
         const root = new TreeNode(i);
