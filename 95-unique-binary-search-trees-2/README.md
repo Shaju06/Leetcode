@@ -1,43 +1,21 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {number} n
- * @return {TreeNode[]}
- */
-var generateTrees = function(n) {
-    if(n===0) return []
+# 95. Unique Binary Search Trees II
 
-    return generateTreeStrct(1,n)
+## **Medium**
 
-function generateTreeStrct(start, end) {
-const result = []
-  if (start > end) {
-    result.push(null);
-    return result;
-  }
-for(let i=start; i<=end;i++) {
-    const leftList = generateTreeStrct(start, i-1)
-    const rightList = generateTreeStrct(i+1, end)
-    console.log(leftList,'leftList', rightList,'rightList')
-     for (let j = 0; j < leftList.length; j++) {
-      for (let k = 0; k < rightList.length; k++) {
-        const root = new TreeNode(i);
-        root.left = leftList[j];
-        root.right = rightList[k];
-        result.push(root);
-      }
-    }
-}
-return result
+Given an integer n, return all the structurally unique BST's (binary search trees), which has exactly n nodes of unique values from 1 to n. Return the answer in any order.
+
+# Example 1:
+
+```bash
+Input: head = [1,2,3,4,5]
+Output: [1,3,5,2,4]
+```
+
+## Example 2:
+
+```bash
+Input: n = 1
+Output: [[1]]
+```
 
 
-}
-
-
-};
